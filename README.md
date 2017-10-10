@@ -1,6 +1,8 @@
 # tensorflow-api
 Docker container with tensorflow/tensorflow:nightly-gpu-py3 and various 
 <a href="https://github.com/tensorflow/models">models</a>.<br/>
+Dependencies: <a href="https://www.tensorflow.org/install/install_linux">
+NVIDIA requirements to run TensorFlow with GPU support</a><br/>
 Default mode: <a href="http://jupyter.org/index.html">Jupyter Notebook</a>
 ## Building the container
 To build the container, change directory to
