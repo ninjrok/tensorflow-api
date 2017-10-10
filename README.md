@@ -22,6 +22,6 @@ docker run -p 8998:8998 -e PORT=8998 tensorflow-api
 ## Verify your installation
 Try running the notebook at 
 <a href="http://localhost:6006/notebooks/models/research/object_detection/object_detection_tutorial.ipynb">
-models/research/object_detection/object_detection_tutorial.ipynb</a>
+models/research/object_detection/object_detection_tutorial.ipynb</a>.<br/>
 You should see the following output.<br/>
 ![png](verified_install.png)
