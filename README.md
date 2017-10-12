@@ -9,19 +9,21 @@ Default mode: <a href="http://jupyter.org/index.html">Jupyter Notebook</a>
 To build the container, change directory to
 <a href="https://github.com/ninjrok/tensorflow-api">tensorflow-api</a> and run the following command.
 ```
-docker build -t tensorflow-api .
+nvidia-docker build -t tensorflow-api .
 ```
 ## Running the container
+Default mode runs jupyter notebook and tensorboard on port 6006. Set the "PASSWORD" env variable 
+for jupyter notebook.
 ```
-docker run -p 6006:6006 tensorflow-api
+nvidia-docker run -p 8888:8888 -p 6006:6006 -e PASSWORD="passwd123" tensorflow-api
 ```
-Optional environment variable: PORT. This will run jupyter notebook on port 8998.
+Optional environment variable: JUPYTER_PORT. The following command will run jupyter notebook on port 8998.
 ```
-docker run -p 8998:8998 -e PORT=8998 tensorflow-api
+nvidia-docker run -p 8998:8998 -p 6006:6006 -e PASSWORD="passwd123" -e JUPYTER_PORT=8998 tensorflow-api
 ```
 ## Verify your installation
 Try running the notebook at 
-<a href="http://localhost:6006/notebooks/models/research/object_detection/object_detection_tutorial.ipynb">
+<a href="http://localhost:8888/notebooks/models/research/object_detection/object_detection_tutorial.ipynb">
 models/research/object_detection/object_detection_tutorial.ipynb</a>.<br/>
 You should see the following output.<br/>
-![png](verified_install.png)
+![png](images/verified_install.png)
